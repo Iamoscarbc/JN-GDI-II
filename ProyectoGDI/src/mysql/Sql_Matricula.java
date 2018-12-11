@@ -24,8 +24,8 @@ public class Sql_Matricula implements DaoMatricula{
 	@Override	
 	public void ingresar(BeanMatricula ma) throws Exception {
 		
-		SQL="INSERT INTO matricula (idEmpleado, nombreEmpleado, idAlumno, nombreAlumno, idCurso, nombreCurso"
-				+ " idPagos, DNI_R, Concepto, Fecha_Matricula) VALUES(?,?,?,?,?,?,?,?)";
+		SQL="INSERT INTO matricula (idEmpleado, nombreEmpleado, idAlumno, nombreAlumno, idCurso, nombreCurso,"
+				+ " idPagos, DNI_R, Fecha_Matricula) VALUES(?,?,?,?,?,?,?,?,?)";
 		mysql.establecerConexion();
 		Connection conectado = mysql.getConnection();
 
@@ -40,8 +40,7 @@ public class Sql_Matricula implements DaoMatricula{
 			pst.setString(6, ma.getNombreCurso());
 			pst.setString(7, ma.getIdPagos());
 			pst.setString(8, ma.getDNI_R());
-			pst.setString(9, ma.getConcepto());
-			pst.setString(10, ma.getFecha_Matricula());
+			pst.setString(9, ma.getFecha_Matricula());
 			pst.executeUpdate();
 		} catch (Exception e)
 		{
@@ -56,7 +55,7 @@ public class Sql_Matricula implements DaoMatricula{
 	@Override
 	public void modificar(BeanMatricula ma) throws Exception {
 		
-		SQL="UPDATE matricula SET idEmpleado=?,nombreEmpleado=?, idAlumno=?, nombreAlumno=?, idPagos=?, DNI_R=?, Concepto=?, Fecha_Matricula=?  where idMatricula=?";
+		SQL="UPDATE matricula SET idEmpleado=?,nombreEmpleado=?, idAlumno=?, nombreAlumno=?, idPagos=?, DNI_R=?, Fecha_Matricula=?  where idMatricula=?";
 		mysql.establecerConexion();
 		Connection conectado = mysql.getConnection();
 
@@ -71,9 +70,8 @@ public class Sql_Matricula implements DaoMatricula{
 			pst.setString(6, ma.getNombreCurso());
 			pst.setString(7, ma.getIdPagos());
 			pst.setString(8, ma.getDNI_R());
-			pst.setString(9, ma.getConcepto());
-			pst.setString(10, ma.getFecha_Matricula());
-			pst.setString(11, ma.getIdMatricula());
+			pst.setString(9, ma.getFecha_Matricula());
+			pst.setString(10, ma.getIdMatricula());
 			pst.executeUpdate();
 		} catch (Exception e)
 		{
@@ -131,13 +129,12 @@ public class Sql_Matricula implements DaoMatricula{
 				ma.setNombreCurso(rst.getString("nombreCurso"));
 				ma.setIdPagos(rst.getString("idPagos"));
 				ma.setDNI_R(rst.getString("DNI_R"));
-				ma.setConcepto(rst.getString("Concepto"));
 				ma.setFecha_Matricula(rst.getString("Fecha_Matricula"));
 				lista.add(ma);
 
 				System.out.println(lista.get(i).getIdMatricula()+" / "+lista.get(i).getIdEmpleado()+"/"+lista.get(i).getNombreEmpleado()
 						+"/"+lista.get(i).getIdAlumno()+" / "+lista.get(i).getNombreAlumno()+"/"+lista.get(i).getIdCurso()+"/"+lista.get(i).getNombreCurso()
-						+"/"+lista.get(i).getIdPagos()+" / "+lista.get(i).getDNI_R()+" / "+lista.get(i).getConcepto()+"/"+lista.get(i).getFecha_Matricula());
+						+"/"+lista.get(i).getIdPagos()+" / "+lista.get(i).getDNI_R()+"/"+lista.get(i).getFecha_Matricula());
 				i++;
 			}
 
@@ -173,8 +170,7 @@ public class Sql_Matricula implements DaoMatricula{
 			bean.setNombreCurso(rst.getString(7));
 			bean.setIdPagos(rst.getString(8));
 			bean.setDNI_R(rst.getString(9));
-			bean.setConcepto(rst.getString(10));
-			bean.setFecha_Matricula(rst.getString(11));
+			bean.setFecha_Matricula(rst.getString(10));
 
 			lis_usu.setElemento(bean);
 		}

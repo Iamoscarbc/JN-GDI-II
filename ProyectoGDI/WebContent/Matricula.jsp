@@ -135,14 +135,13 @@
                   <tr>
                         <th>#</th>
                         <th>#Empleado</th>
-                        <th>Nombre Empleado</th>
+                        <th>Encargado</th>
 			            <th>#Alumno</th>
 			            <th>Nombre Alumno</th>
 			            <th>#Curso</th>
 			            <th>Nombre Curso</th>
 			            <th>#Pago</th>
 			            <th>DNI_R</th>
-			            <th>Concepto</th>
 			            <th>Fecha_Matricula</th>
 			            <th>Editar</th>
 			            <th>Eliminar</th>
@@ -162,7 +161,6 @@
                             <td id="nombreCurso1"><%=bean_ma.getNombreCurso()%></td>
                             <td id="idPagos1"><%=bean_ma.getIdPagos()%></td>
                             <td id="DNI_R1"><%=bean_ma.getDNI_R()%></td>
-                            <td id="Concepto1"><%=bean_ma.getConcepto()%></td>
                             <td id="Fecha_Matricula1"><%=bean_ma.getFecha_Matricula()%></td>
                             <td>
 				            	<button name="btnEditar" value="Editar" id="Editar" class="btn btn-outline-primary">
@@ -221,14 +219,13 @@
                   <tr>
                         <th>#</th>
                         <th>#Empleado</th>
-                        <th>Nombre Empleado</th>
+                        <th>Encargado</th>
 			            <th>#Alumno</th>
 			            <th>Nombre Alumno</th>
 			            <th>#Curso</th>
 			            <th>Nombre Curso</th>
 			            <th>#Pago</th>
 			            <th>DNI_R</th>
-			            <th>Concepto</th>
 			            <th>Fecha_Matricula</th>
                   </tr>
                 </thead>
@@ -246,7 +243,6 @@
                             <td id="nombreCurso1"><%=bean_ma.getNombreCurso()%></td>
                             <td id="idPagos1"><%=bean_ma.getIdPagos()%></td>
                             <td id="DNI_R1"><%=bean_ma.getDNI_R()%></td>
-                            <td id="Concepto1"><%=bean_ma.getConcepto()%></td>
                             <td id="Fecha_Matricula1"><%=bean_ma.getFecha_Matricula()%></td>
                       </tr>
                     <% } %>
@@ -257,7 +253,7 @@
 			</div>
  
         <div class="modal fade" id="registrarMatricula">
-			<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-dialog  modal-dialog-centered">
 				<div class="modal-content" style="background-color: #000000;">
 					<div class="modal-header">
 					<h3 class="modal-tittle text-center text-white" id="tittleModal">Registrar Matricula</h3>
@@ -302,11 +298,11 @@
 				                  <div class="col-5" style="padding-left: 1px;">
 				                  	<a href="#ventanaCursos" class="btn btn-dark btn-md" id="Visualizar" data-toggle="modal">Seleccionar</a>
 				                  </div>
-			                  </div>
+			                  </div>			                  
 			                </div>
 			                  <div class="form-group">
 			                  	<input type="text" placeholder="Nombre Curso" name="nombreCurso" id="nombreCurso" class="form-control" required onkeypress="return sololetras(event)" onpaste="return false">
-			                  </div>
+			                  </div>			                  
 			                <div class="form-group">
 			                  <div class="row">
 				                  <div class="col-6">
@@ -320,12 +316,6 @@
 			                <div class="form-group">
 			                  	<input type="number" placeholder="DNI_R" name="DNI_R" id="DNI_R" class="form-control" required onkeypress="return solonumeros(event)" onpaste="return false" readonly>
 			                </div>
-			                <div class="form-group">
-							   <select class="form-control" name="Concepto" id="Concepto" disabled required>
- 								   <option value="">Seleccione Concepto</option>
- 								   <option value="Matrícula">Matrícula</option>
-							   </select>
-							 </div>	
 			                <div class="form-group">
 			                  <input type="date" placeholder="Fecha_Matricula" name="Fecha_Matricula" class="form-control">
 			                </div>
@@ -405,12 +395,6 @@
 			                <div class="form-group">
 			                  	<input type="number" placeholder="DNI_R" name="DNI_R" id="DNI_RM" class="form-control" required onkeypress="return solonumeros(event)" onpaste="return false" readonly>
 			                </div>
-			                <div class="form-group">
-							   <select class="form-control" name="Concepto" id="ConceptoM" required disabled>
- 								   <option value="">Seleccione Concepto</option>
- 								   <option value="Matrícula">Matrícula</option>
-							   </select>
-							 </div>	
 			                <div class="form-group">
 			                  <input type="date" placeholder="Fecha_Matricula" name="Fecha_Matricula" id="Fecha_MatriculaM" class="form-control">
 			                </div>

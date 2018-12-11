@@ -38,7 +38,6 @@ public class ServletMatricula extends HttpServlet {
 		String NombreCurso=request.getParameter("nombreCurso");
 		String idPagos=request.getParameter("idPagos");
 		String DNI_R=request.getParameter("DNI_R");
-		String Concepto=request.getParameter("Concepto");
 		String Fecha_Matricula=request.getParameter("Fecha_Matricula");
 		
 		
@@ -52,7 +51,6 @@ public class ServletMatricula extends HttpServlet {
 		ma.setNombreCurso(NombreCurso);
 		ma.setIdPagos(idPagos);
 		ma.setDNI_R(DNI_R);
-		ma.setConcepto(Concepto);
 		ma.setFecha_Matricula(Fecha_Matricula);
 		
 		Sql_Matricula DMI = new Sql_Matricula();

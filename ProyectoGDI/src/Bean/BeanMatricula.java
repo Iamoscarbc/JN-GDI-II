@@ -12,7 +12,6 @@ public class BeanMatricula extends Bean{
 	String nombreCurso;
 	String idPagos;
 	String DNI_R;
-	String Concepto;
 	String Fecha_Matricula;
 	
 	public BeanMatricula() {
@@ -20,7 +19,7 @@ public class BeanMatricula extends Bean{
 	}
 
 	public BeanMatricula(String idMatricula, String idEmpleado,String nombreEmpleado, String idAlumno,String nombreAlumno,String idCurso, String nombreCurso,
-			String idPagos,	String DNI_R,String Concepto, String fecha_Matricula) {
+			String idPagos,	String DNI_R, String fecha_Matricula) {
 		super();
 		this.idMatricula = idMatricula;
 		this.idEmpleado = idEmpleado;
@@ -31,7 +30,6 @@ public class BeanMatricula extends Bean{
 		this.nombreCurso = nombreCurso;
 		this.idPagos = idPagos;
 		this.DNI_R =DNI_R;
-		this.Concepto = Concepto;
 		Fecha_Matricula = fecha_Matricula;
 	}
 
@@ -105,14 +103,6 @@ public class BeanMatricula extends Bean{
 
 	public void setDNI_R(String dNI_R) {
 		DNI_R = dNI_R;
-	}
-
-	public String getConcepto() {
-		return Concepto;
-	}
-
-	public void setConcepto(String concepto) {
-		Concepto = concepto;
 	}
 
 	public String getFecha_Matricula() {

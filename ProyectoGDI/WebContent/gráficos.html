@@ -43,3 +43,71 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <p:dataTable id="tablaProductosFactura" editable="true" var="item" 
+                                     value="#{facturaBean.listaDetallefactura}" rowIndexVar="rowIndex">
+                            <p:ajax event="rowEdit" listener="#{facturaBean.onRowEdit}" update=":formFactura:tablaProductosFactura  :formFactura:gridTotalFactura" />
+                            <p:ajax event="rowEditCancel" listener="#{facturaBean.onRowCancel}" update=":formFactura:tablaProductosFactura  :formFactura:gridTotalFactura"/>
+
+                            <p:column headerText="Codigo Barra">
+                                <h:outputText value="#{item.codBarra}"/>
+                            </p:column>
+                            <p:column headerText="Producto">
+                                <h:outputText value="#{item.nombreProducto}"/>
+                            </p:column>
+                            <p:column headerText="Cantidad">
+                                <p:cellEditor>
+                                    <f:facet name="output">
+                                        <h:outputText value="#{item.cantidad}"/>
+                                    </f:facet>
+                                    <f:facet name="input">
+                                        <h:inputText value="#{item.cantidad}" label="Cantidad Producto"
+                                                     required="true" requiredMessage="Es necesaria una cantidad"
+                                                     converter="#{Ingeger}" converterMessage="Esta no es una cantidad correcta"
+                                                     validatorMessage="La cantidad debe ser mayor o igual a 1">
+                                            <f:validateLongRange minimum="1"/>
+                                        </h:inputText>
+                                    </f:facet>
+                                </p:cellEditor>
+                            </p:column>
+
+                            <p:column headerText="Precio Venta">
+                                $<h:outputText value="#{item.precioVenta}"/>
+                            </p:column>
+                            <p:column headerText="Total">
+                                <h:outputText value="#{item.total}"/>
+                            </p:column>
+                            <p:column headerText="Editar">
+                                <p:rowEditor/>
+                            </p:column>
+                            <p:column headerText="Eliminar">
+                                <p:commandLink value="X" actionListener="#{facturaBean.quitarProductoDetalleFactura(item.codBarra, rowIndex)}"
+                                               title="Quitar Producto" update=":formFactura:tablaProductosFactura  :formFactura:gridTotalFactura"/>
+                            </p:column>
+                        </p:dataTable>
+
+
+
+
+
+
+
+
+
+
+
