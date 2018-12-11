@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Usando highcharts </title>
+    <meta charset="utf-8" />
+
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+
+</head>
+<body>
+<button type="button" id="btnGrafico">Llenar Gráfico</button>
+  <div id="grafica">
+  
+  
+  
+  </div>
+   <script>
+   $(document).ready(function(){
+	   $("#btnGrafico").click("click",function(){
+		   DibujaGrafico();
+	   })
+   })
+    $(function DibujaGrafico(){
+        $('#grafica').highcharts({
+            title:{text:'Nuestra primera gráfica'},
+            xAxis:{categories:['2016','2017','2018']},
+            yAxis:{title:'Cantidad #',plotLines:[{value:0,width:1,color:'#808080'}]},
+            tooltip:{valueSuffix:' alumnos'},
+            legend:{layout:'vertical',align:'right',verticalAlign:'middle',borderWidth:0},
+            series:[
+                    {type: 'column',name: 'Inicial de 2 años',data: [10,15, 30]},
+                    {type: 'column',name: 'Inicial de 3 años',data: [20, 10,11]},
+                    {type: 'column',name: 'Inicial de 4 años',data: [15, 18,11]},
+                    {type: 'column',name: 'Inicial de 5 años',data: [11, 17,11]},
+                  ],
+            plotOptions:{line:{dataLabels:{enabled:true}}}
+        });
+    });
+   </script>
+
+</body>
+</html>
